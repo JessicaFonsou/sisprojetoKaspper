@@ -1,0 +1,21 @@
+<h2>Lista de Clientes</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Nome</th>
+      <th>CNPJ</th>
+      <th>Email</th>
+      <th>Telefone</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let cliente of clientes; let i = index">
+      <td>{{ i + 1 }}</td>
+      <td>{{ cliente.cliente }}</td>
+      <td>{{ cliente.cnpj }}</td>
+      <td>{{ cliente.email }}</td>
+      <td>{{ cliente.telefone }}</td>
+    </tr>
+  </tbody>
+</table>
