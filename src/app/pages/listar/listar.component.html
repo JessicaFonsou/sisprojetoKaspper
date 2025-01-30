@@ -1,27 +1,24 @@
-<div class="container mt-5">
-  <h2 class="text-center mb-4">Lista de Orçamentos</h2>
+<h2>Lista de Orçamentos</h2>
 
-  <table class="table table-bordered">
-    <thead>
-      <tr>
-        <th>Serviço</th>
-        <th>Prioridade</th>
-        <th>Valor Estimado</th>
-        <th>Ações</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let servico of servicos">
-        <td>{{ servico.descricao }}</td>
-        <td>{{ servico.status }}</td>
-        <td>{{ servico.valorEstimado === 0 ? 'Valor a confirmar' : servico.valorEstimado | currency }}</td>
-        <td class="text-center">
-          <button class="btn btn-primary mx-2" (click)="confirmarOrcamento()">Confirmar</button>
-          <button class="btn btn-secondary mx-2" (click)="voltar()">Voltar</button>
-         
+<table border="1" cellspacing="0" cellpadding="8">
+  <thead>
+    <tr>
+      <th>Serviço</th>
+      <th>Prioridade</th>
+      <th>Valor Estimado</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let servico of servicos">
+      <td>{{ servico.descricao }}</td>
+      <td>{{ servico.status }}</td>
+      <td>{{ servico.valorEstimado === 0 ? 'Valor a confirmar' : servico.valorEstimado | currency }}</td>
+    </tr>
+  </tbody>
+</table>
 
-        </td>
-      </tr>
-    </tbody>
-  </table>
+<!-- Botões centralizados -->
+<div class="botao-container">
+  <button (click)="confirmarOrcamento()">Confirmar</button>
+  <button (click)="voltar()">Editar</button>
 </div>

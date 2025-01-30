@@ -67,6 +67,7 @@ export class ServicosComponent implements OnInit {
       alert('Orçamento solicitado com sucesso!');
       this.servicoForm.reset();
       this.router.navigate(['/listar']); // Redireciona para a página de listagem
+      
     } else {
       alert('Por favor, preencha todos os campos obrigatórios.');
     }
@@ -74,5 +75,6 @@ export class ServicosComponent implements OnInit {
 
   onCancel(): void {
     this.servicoForm.reset(); // Reseta o formulário
+    this.router.navigate(['/clientes/cadastro']); // Redireciona para a página de inicial
   }
 }

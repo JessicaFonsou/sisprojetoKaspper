@@ -19,11 +19,12 @@ export class ListarComponent implements OnInit {
   confirmarOrcamento(): void {
     // Lógica para confirmar o orçamento
     alert('Orçamento confirmado! A equipe entrará em contato nas próximas 24 horas.');
-    
+     // Redireciona para a página de agradecimento
+     this.router.navigate(['/agradecimento']);
 }
 
 voltar(): void {
   // Lógica para voltar à tela anterior ou redirecionar
-  this.router.navigate(['/']); // Exemplo para navegar de volta à Home
+  this.router.navigate(['/servicos']); // Exemplo para navegar de volta a tela de serviços
 }
 }
