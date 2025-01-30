@@ -1,0 +1,12 @@
+.custom-btn-save {
+    background-color: #007bff !important; /* Azul padrão */
+    color: white;
+    font-weight: bold;
+    transition: background-color 0.3s ease; /* Efeito suave */
+  }
+  
+  .custom-btn-save:hover {
+    background-color: #0056b3 !important; /* Azul mais escuro ao passar o mouse */
+    color: white;
+  }
+  

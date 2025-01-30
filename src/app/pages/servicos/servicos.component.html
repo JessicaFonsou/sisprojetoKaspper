@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cadastro de Serviço</title>
+    <!-- Link para o Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <style>
+      .background {
+        background-image: url('assets/images/logoFundo.jpg');
+        background-size: cover;
+        background-position: center;
+        min-height: 90vh;
+        padding: 50px 0;
+      }
+
+      .form-container {
+        padding: 40px;
+        border-radius: 10px;
+      }
+
+      .custom-text {
+        color: #4d2e91;
+      }
+
+      .custom-btn {
+        background-color: #5644ba;
+        color: white;
+      }
+
+      .form-title {
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Div com fundo de imagem -->
+    <div class="background">
+      <div class="container form-container">
+        <h1 class="text-center mb-4 custom-text">Orçamento de Serviços</h1>
+
+        <!-- Formulário de Serviço -->
+        <form [formGroup]="servicoForm" (ngSubmit)="onSubmit()">
+          <h3 class="form-title custom-text mb-4">Orçamento de Serviços</h3>
+
+          <!-- Tipo de Serviço -->
+          <div class="mb-3">
+            <label for="descricao" class="form-label">Escolha o tipo de serviço:</label>
+            <select id="descricao" class="form-select" formControlName="descricao" required>
+              <option value="" disabled>Selecione uma opção</option>
+              <option value="Criação de site (institucional/pessoal)">Criação de site (institucional/pessoal)</option>
+              <option value="Desenvolvimento gestão empresarial">Desenvolvimento sistema gestão empresarial</option>
+              <option value="Desenvolvimento e-commerce">Desenvolvimento sistema e-commerce</option>
+              <option value="Atualização conteúdo do site">Atualização conteúdo do site</option>
+              <option value="Atualização conteúdo da estrutura">Atualização conteúdo da estrutura</option>
+              <option value="Outro">Outro</option>
+            </select>
+          </div>
+
+          <!-- Linguagem -->
+          <div class="mb-3">
+            <label for="linguagem" class="form-label">Linguagem e Banco de Dados:</label>
+            <input
+              type="text"
+              id="linguagem"
+              class="form-control"
+              formControlName="linguagem"
+              placeholder="Ex.: Java, Angular, Mysql, Postgres, Ainda Não Sei"
+              required
+            />
+          </div>
+
+          <!-- Preciso de ajuda -->
+          <div class="mb-3 form-check">
+            <input
+              type="checkbox"
+              id="precisoAjuda"
+              class="form-check-input"
+              formControlName="precisoAjuda"
+            />
+            <label for="precisoAjuda" class="form-check-label">Preciso de ajuda para escolher o serviço</label>
+          </div>
+
+          <!-- Descrição dos serviços -->
+          <div class="mb-3">
+            <label for="descricaoServico" class="form-label">Descrição dos serviços solicitados (opcional):</label>
+            <textarea
+              id="descricaoServico"
+              class="form-control"
+              formControlName="descricaoServico"
+              rows="3"
+              placeholder="Descreva aqui os serviços que precisa"
+            ></textarea>
+          </div>
+
+          <!-- Status do Serviço -->
+          <div class="mb-3">
+            <label for="status" class="form-label">Status do Serviço:</label>
+            <select id="status" class="form-select" formControlName="status" required>
+              <option value="Normal">Normal</option>
+              <option value="Média">Média</option>
+              <option value="Urgente">Urgente</option>
+            </select>
+          </div>
+
+          <!-- Botões -->
+          <div class="d-flex justify-content-center gap-3">
+            <button type="submit" class="btn custom-btn" [disabled]="!servicoForm.valid">Salvar</button>
+            <button type="button" class="btn btn-secondary" (click)="onCancel()">Cancelar</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- Link para o JavaScript do Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

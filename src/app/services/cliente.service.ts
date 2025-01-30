@@ -1,17 +1,17 @@
+// cliente.service.ts
 import { Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClienteService {
-  private clientes: any[] = [];
+  private nomeCliente: string = '';
 
-  adicionarCliente(cliente: any): void {
-    this.clientes.push(cliente);
-    console.log('Clientes cadastrados:', this.clientes);
+  setNomeCliente(nome: string): void {
+    this.nomeCliente = nome;
   }
 
-  listarClientes(): any[] {
-    return this.clientes;
+  getNomeCliente(): string {
+    return this.nomeCliente;
   }
 }
